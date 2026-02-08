@@ -46,3 +46,32 @@ trigger.add(
 )
 run(trigger(hello))
 ```
+
+----------------------------------------------------------------------------------------------
+
+# Packages
+
+If you want to organise your mod, you can use packages.
+You can load pre-made packages on this repository, for example `easylog`.
+This is a sample script that loads `easylog`:
+```
+#init
+modname(sample)
+modver(1.0 EXAMPLE)
+overridegamefiles(false)
+packages(easylog)
+preload(
+    import from(easylog) get(*)
+)
+```
+You can also specify which parts of a package you want to import:
+```
+#init
+modname(sample)
+modver(1.0 EXAMPLE)
+overridegamefiles(false)
+packages(easylog)
+preload(
+    import from(easylog) get(chatlog, gamelog)
+)
+```
